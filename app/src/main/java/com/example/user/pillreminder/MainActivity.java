@@ -298,4 +298,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onNothingSelected(AdapterView<?> parent) {
 
     }
+
+    private void TestFunc{
+        int i =0;
+    }
+
+
 }
