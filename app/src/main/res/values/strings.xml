@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">PillReminder</string>
+    <string name="medicines">Medicines</string>
+    <string name="procedures">Procedures</string>
+    <string name="doctors">Doctors</string>
+    <string name="schedule">Schedule</string>
+    <string name="measurements">Measurements</string>
+    <string name="history">History</string>
+    <string name="add_patient">Add Patient</string>
+    <string name="select_patient">Select Patient</string>
+    <string name="save_patient">Save</string>
+    <string name="patient_phone">Patient phone number</string>
+    <string name="patient_name">Patient name</string>
+    <string name="change">Change</string>
+    <string name="change_err">Please enter your name and phone number to change</string>
+    <string name="pacient_name">Pacient name</string>
+    <string name="pacient_phone">Phone number</string>
+    <string name="patient_details">Patient details</string>
+    <string name="patients_group">Group of patients</string>
+    <string name="btn_add">Add</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_delete">Delete</string>
+    <string name="error">Error</string>
+    <string name="name_empty">Please fill the patient name</string>
+    <string name="phone_empty">Notifications will not be sent to this patient\n as long as phone number will not be inserted </string>
+    <string name="select_item_edit">Please select the item to edit</string>
+    <string name="select_item_delete">Please select the item to delete</string>
+</resources>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.user.pillreminder.MainActivity"
+    android:background="#6bbafa"
+    android:gravity="center_vertical|center_horizontal">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_alignParentTop="false"
+        android:layout_centerInParent="true"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_alignParentBottom="false"
+        android:foregroundGravity="center_vertical|center_horizontal"
+        android:measureAllChildren="false"
+        android:transitionGroup="false">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="0dp"
+            android:gravity="center_horizontal"
+            android:background="#6bbafa">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#6bbafa">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pacient_name"
+                    android:id="@+id/textView2"
+                    android:textColor="#000000"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pacient_phone"
+                    android:id="@+id/textView3"
+                    android:layout_marginLeft="45dp"
+                    android:textSize="10sp"
+                    android:textColor="#000000" />
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:text="@string/change"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:layout_width="100dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/btn_normal"
+                    android:shadowColor="#000000"
+                    android:shadowDx="0"
+                    android:shadowDy="0"
+                    android:shadowRadius="5"
+                    android:id="@+id/btnChange"
+                    android:layout_marginLeft="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#6bbafa">
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:id="@+id/spinName"
+                    android:spinnerMode="dropdown" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/editPhone"
+                    android:layout_marginLeft="7dp"
+                    android:textColor="#000000"
+                    android:textSize="12sp"
+                    android:maxWidth="100dp"
+                    android:minHeight="20dp"
+                    android:maxHeight="30dp"
+                    android:maxLines="1"
+                    android:maxLength="14"
+                    android:lines="1"
+                    android:minWidth="100dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000"></LinearLayout>
+
+            <Button
+                android:id="@+id/btnMed"
+                android:text="@string/medicines"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn_normal"
+                android:shadowColor="#000000"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:layout_marginTop="10dp"
+                android:focusable="true"/>
+
+            <Button
+                android:id="@+id/btnProcedures"
+                android:text="@string/procedures"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn_normal"
+                android:shadowColor="#000000"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:layout_marginTop="10dp"
+                android:shadowRadius="5"/>
+
+            <Button
+                android:id="@+id/btnDoctors"
+                android:text="@string/doctors"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn_normal"
+                android:shadowColor="#000000"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:layout_marginTop="10dp"
+                android:shadowRadius="5"/>
+
+            <Button
+                android:id="@+id/btnSchedule"
+                android:text="@string/schedule"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn_normal"
+                android:shadowColor="#000000"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:layout_marginTop="10dp"
+                android:shadowRadius="5"/>
+
+            <Button
+                android:id="@+id/btnMeasurements"
+                android:text="@string/measurements"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn_normal"
+                android:shadowColor="#000000"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:layout_marginTop="10dp"
+                android:shadowRadius="5"/>
+
+            <Button
+                android:id="@+id/btnHistory"
+                android:text="@string/history"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:background="@drawable/btn_normal"
+                android:shadowColor="#000000"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:layout_marginTop="10dp"
+                android:shadowRadius="5"/>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

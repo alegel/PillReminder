@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PillReminder</string>
+    <string name="medicines">תרופות</string>
+    <string name="doctors">רופאים</string>
+    <string name="history">היסטוריה</string>
+    <string name="measurements">מדידות</string>
+    <string name="procedures">טיפולים</string>
+    <string name="schedule">לוח זמנים</string>
+    <string name="ic_menu_add_user">להוסיף הטופל</string>
+    <string name="change">החלף</string>
+</resources>

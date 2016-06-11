@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">PillReminder</string>
+    <string name="medicines">Медикаменты</string>
+    <string name="doctors">Врачи</string>
+    <string name="history">История</string>
+    <string name="measurements">Измерения</string>
+    <string name="procedures">Процедуры</string>
+    <string name="schedule">Расписание</string>
+    <string name="ic_menu_add_user">Добавить пациента</string>
+    <string name="change">Изменить</string>
+</resources>
