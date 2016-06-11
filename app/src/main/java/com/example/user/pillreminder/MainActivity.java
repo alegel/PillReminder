@@ -299,11 +299,4 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    private void TestFunc{
-        int i =99;
-        int ii = i;
-        i = 124;
-    }
-
-
 }
