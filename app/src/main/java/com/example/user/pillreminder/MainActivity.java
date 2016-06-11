@@ -301,6 +301,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void TestFunc{
         int i =0;
+        int ii = i;
     }
 
 
