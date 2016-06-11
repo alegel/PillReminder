@@ -56,6 +56,7 @@ public class PatientsGroup extends AppCompatActivity implements AdapterView.OnIt
         dlg.setTitle(R.string.error);
         dlg.setPositiveButton("Ok", (DialogInterface.OnClickListener) this);
         dlg.setNegativeButton("Cancel", (DialogInterface.OnClickListener) this);
+        // Some changes
     }
 
     private void cleanFields() {
