@@ -1,25 +1,48 @@
-package com.example.user.pillreminder;
+package com.alegel.user.pillreminder;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.alegel.user.pillreminder.db_connection.JSONParser;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class PatientDetails extends AppCompatActivity {
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
     private int exists =0;
     private Handler handler = new Handler();
+    private JSONParser jsonParser = new JSONParser();
+    // Progress Dialog
+    private ProgressDialog pDialog;
+    TextView txtName;
+    TextView txtPhone;
+    String strName, strPhone;
+    private Button btnSign, btnSaveToDB;
 
-    private TextView txtName;
-    private TextView txtPhone;
-    private Button btnSign;
+    // url to create new product
+    private static String url_create_product = "http://10.0.2.2/PillReminder/php/patient_table/add_patient.php";
+
+    // JSON Node names
+    private static final String TAG_SUCCESS = "success";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +53,8 @@ public class PatientDetails extends AppCompatActivity {
             txtName.setHintTextColor(Color.BLACK);
         txtPhone = (TextView) findViewById(R.id.editPhone);
         btnSign = (Button) findViewById(R.id.btnSign);
+        btnSaveToDB = (Button) findViewById(R.id.btnSaveToDB);
+
 
         final Intent intent = getIntent();
         final String mPhoneNumber = intent.getStringExtra("phone");
@@ -109,5 +134,81 @@ public class PatientDetails extends AppCompatActivity {
             finish();
         }
     };
+
+    public void SaveToDataBase(View view) {
+        strName = txtName.getText().toString();
+        strPhone = txtPhone.getText().toString();
+        if(strPhone.isEmpty())
+            strPhone = txtPhone.getHint().toString();
+        new CreateNewPatient().execute();
+    }
+
+    /**
+     * Background Async Task to Create new product
+     * */
+    class CreateNewPatient extends AsyncTask<String, String, String> {
+
+        /**
+         * Before starting background thread Show Progress Dialog
+         * */
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog = new ProgressDialog(PatientDetails.this);
+            pDialog.setMessage("Creating Patient..");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(true);
+            pDialog.show();
+        }
+
+        /**
+         * Creating product
+         * */
+        protected String doInBackground(String... args) {
+            // Building Parameters
+            List<NameValuePair> params = new ArrayList<NameValuePair>();
+            params.add(new BasicNameValuePair("name", strName));
+            params.add(new BasicNameValuePair("phone", strPhone));
+            params.add(new BasicNameValuePair("server_id", "server_id123"));
+            params.add(new BasicNameValuePair("pakage_id", "pakage_id123"));
+
+
+            // getting JSON Object
+            // Note that create product url accepts POST method
+            JSONObject json = jsonParser.makeHttpRequest(url_create_product,"POST", params);
+
+            // check log cat fro response
+            Log.d("Alex", json.toString());
+
+            // check for success tag
+            try {
+                int success = json.getInt(TAG_SUCCESS);
+
+                if (success == 1) {
+                    // successfully created patient
+                    Log.d("Alex", "Successfully created patient");
+
+                    // closing this screen
+                    finish();
+                } else {
+                    // failed to create product
+                    Log.d("Alex", "Failed to create patient");
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+        }
+
+        /**
+         * After completing background task Dismiss the progress dialog
+         * **/
+        protected void onPostExecute(String file_url) {
+            // dismiss the dialog once done
+            pDialog.dismiss();
+        }
+
+    }
 
 }

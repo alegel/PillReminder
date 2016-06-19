@@ -1,4 +1,4 @@
-package com.example.user.pillreminder;
+package com.alegel.user.pillreminder;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -17,7 +17,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.user.pillreminder.patients.Patient;
+import com.alegel.user.pillreminder.patients.Patient;
 
 import java.util.ArrayList;
 

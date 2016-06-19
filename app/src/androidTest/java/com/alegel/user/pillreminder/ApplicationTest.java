@@ -1,4 +1,4 @@
-package com.example.user.pillreminder;
+package com.alegel.user.pillreminder;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

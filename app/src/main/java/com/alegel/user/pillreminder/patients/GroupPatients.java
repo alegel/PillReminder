@@ -1,4 +1,4 @@
-package com.example.user.pillreminder.patients;
+package com.alegel.user.pillreminder.patients;
 
 import java.io.Serializable;
 

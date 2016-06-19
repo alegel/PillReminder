@@ -1,4 +1,4 @@
-package com.example.user.pillreminder;
+package com.alegel.user.pillreminder;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.example.user.pillreminder.patients.Patient;
+import com.alegel.user.pillreminder.patients.Patient;
 
 import java.util.ArrayList;
 
